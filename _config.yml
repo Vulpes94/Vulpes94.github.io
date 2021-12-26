@@ -1,11 +1,11 @@
 # Setup
 title: 어느 개발자의 블로그
-description: A simple, beautiful, and powerful Jekyll theme for blogs
-url: https://vszhub.github.io
-avatar: /avatar.jpeg
+description: Life is C between B and D
+url: https://vulpes94.github.io
+avatar: /vulpes.png
 paginate: 5
 permalink: pretty
-cover_image: /bg.jpeg
+cover_image: /bigDipper.jpg
 
 # Gems
 plugins:
