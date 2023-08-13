@@ -1,13 +1,14 @@
 * {margin: 0; padding: 0; }
 html {overflow-y: scroll;} 
-table { border-collapse: collapse; border-spacing: 0; }
+table { border-collapse: collapse; border-spacing: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 전체 화면 높이에 맞추려면 필요한 경우 설정 */
+}
 
 /* BOARD SETUP */
-#board { margin-left: 20px; border: 9px solid #FAFAED; margin-top: 7px; margin-bottom: 7px;  
--moz-box-shadow:    0px 0px 0px 3px #D0D0FF;
--webkit-box-shadow: 0px 0px 0px 3px #D0D0FF;
-box-shadow:         0px 0px 0px 3px #D0D0FF; }
-#board td { width: 50px; height: 50px; border: 0px solid black; background: #E4D9D1; }
+#board td { width: 50px; height: 50px; border: 0px solid black; background: #E4D9D1 }
 #board td.wallPlacementVert,
 #board td.wallPlacementVert_NOHOVER { width: 11px; border: 0px; background: #FAFAED; }
 #board td.wallPlacementHoriz,

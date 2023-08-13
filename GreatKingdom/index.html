@@ -344,15 +344,20 @@
 
     <script>
       function changeColor(td) {
-        var colors = ["blue", "red", "#E4D9D1"];
-        var currentColor = td.style.backgroundColor;
+        var colors = [
+          "linear-gradient(rgb(35, 84, 194) 0%, rgb(100, 160, 216) 100%)",
+          "linear-gradient(rgb(212, 90, 39) 0%, rgb(224, 136, 80) 100%)",
+          "rgb(228, 217, 209)",
+        ];
+        var currentColor = td.style.background;
+        console.log(currentColor);
         var currentIndex = colors.indexOf(currentColor);
         console.log(currentIndex);
 
         if (currentIndex === colors.length - 1) {
-          td.style.backgroundColor = colors[0];
+          td.style.background = colors[0];
         } else {
-          td.style.backgroundColor = colors[currentIndex + 1];
+          td.style.background = colors[currentIndex + 1];
         }
       }
 
@@ -364,7 +369,13 @@
 
         var pos = parseInt(cell.getAttribute("data-pos"));
 
-        if (!isNaN(pos) && pos >= 0 && pos <= 80 && pos !== 40 && !cell.getAttribute("data-pos").includes("-")) {
+        if (
+          !isNaN(pos) &&
+          pos >= 0 &&
+          pos <= 80 &&
+          pos !== 40 &&
+          !cell.getAttribute("data-pos").includes("-")
+        ) {
           cell.onclick = function () {
             changeColor(this);
           };
