@@ -1,0 +1,21 @@
+* {margin: 0; padding: 0; }
+html {overflow-y: scroll;} 
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* BOARD SETUP */
+#board { margin-left: 20px; border: 9px solid #FAFAED; margin-top: 7px; margin-bottom: 7px;  
+-moz-box-shadow:    0px 0px 0px 3px #D0D0FF;
+-webkit-box-shadow: 0px 0px 0px 3px #D0D0FF;
+box-shadow:         0px 0px 0px 3px #D0D0FF; }
+#board td { width: 50px; height: 50px; border: 0px solid black; background: #E4D9D1; }
+#board td.wallPlacementVert,
+#board td.wallPlacementVert_NOHOVER { width: 11px; border: 0px; background: #FAFAED; }
+#board td.wallPlacementHoriz,
+#board td.wallPlacementHoriz_NOHOVER { height: 11px; border: 0px; background: #FAFAED; }     
+#board td.crossSpace { width: 11px; height: 11px; border: 0px; background: #FAFAED; }
+#board td.wallPlacementHoriz, #board td.wallPlacementVert { cursor: pointer; } 
+
+/* PIECES */
+.pieceComputer { border-radius: 50%; width: 39px; height: 39px; background: #000; margin-left: 5px; border: 1px solid #000; }
+.piecePlayer { border-radius: 50%; width: 39px; height: 39px; background: #fff; margin-left: 5px; border: 1px solid #fff; }
+
