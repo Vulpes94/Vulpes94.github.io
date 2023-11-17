@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./index.css" />
+    <script src="./js/main.js"></script>
     <!-- Import TensorFlow.js -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
     <script>
@@ -12,8 +13,13 @@
         const zerosTensor = tf.zeros(shape);
 
         // (0, 0, 76) 및 (1, 0, 76) 위치에 1을 설정합니다.
-        zerosTensor.bufferSync().set(1, 0, 0, 76);
-        zerosTensor.bufferSync().set(1, 1, 0, 76);
+        // zerosTensor.bufferSync().set(1, 0, 0, 76);
+        // zerosTensor.bufferSync().set(1, 1, 0, 76);
+
+        
+        zerosTensor.bufferSync().set(1, 0, 0, 58);
+        zerosTensor.bufferSync().set(1, 1, 0, 58);
+
         console.log(zerosTensor.arraySync());
 
         // 추론을 위한 입력 데이터 셰이프 변환
@@ -39,20 +45,26 @@
           const [policy, value] = model.predict(x);
           console.log("Policy:", policy.arraySync());
           console.log("Value:", value.arraySync());
+
+          const policyArray = policy.arraySync()[0];
+          const maxPolicyValue = Math.max(...policyArray);
+          const maxPolicyIndex = policyArray.indexOf(maxPolicyValue);
+
+          console.log("가장 큰 Policy 값:", maxPolicyValue);
+          console.log("가장 큰 Policy 값의 인덱스:", maxPolicyIndex);
+
         }
+
+        
 
         loadAndUseModel();
 
-        document
-          .querySelector(".piecePlayer")
-          .addEventListener("click", function () {
-            alert("You clicked me!");
-          });
       });
     </script>
     <title>QuoridorMini</title>
   </head>
   <body>
+    <button type="button" class="start">start</button>
     <table id="board">
       <!-- ROW 1 -->
       <tr>
